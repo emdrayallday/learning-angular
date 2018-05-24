@@ -1,20 +1,20 @@
 <label for="">Server Name</label>
-<input
+<!-- <input
 type='text'
 class='form-control'
 (input)='onUpdateServerName($event)'
->
+> -->
 <input
 type='text'
 class='form-control'
 [(ngModel)]='serverNameTwoWay'
 >
-<p>{{serverNameTwoWay}}</p>
 
-<p>
-  {{serverName}}
+
+
   <button class='btn btn-primary' [disabled]='!allowAddServer' (click)="onCreateServer()">Add Server</button>
-  {{serverCreationStatus}}
-</p>
+
+  <p *ngIf="serverName; else noServer">{{serverNameTwoWay}}</p>
+<ng-template #noServer><p>No server!</p></ng-template>
 <app-server></app-server>
 <app-server></app-server>

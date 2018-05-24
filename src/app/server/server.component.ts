@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
 
 
 
@@ -7,9 +7,9 @@ import {Component} from '@angular/core'
   templateUrl: './server.component.html'
 })
 export class ServerComponent {
-serverId: number = 10;
-serverStatus: string  = 'Offline'
+serverId = 10;
+serverStatus  = 'Offline';
 getStatus() {
-  return this.serverStatus
+  return this.serverStatus;
 }
 }
