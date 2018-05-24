@@ -13,7 +13,7 @@ class='form-control'
   <p *ngIf="serverName; else noServer">{{serverNameTwoWay}}</p>
   <button (click)="toggleP()">Toggle Paragraph</button>
   <p *ngIf='seeMe'>You can see me!</p>
-  <p *ngFor='let item of array' [ngClass]='{balls: item >= 5 ? true : false}'>{{item}}</p>
+  <p *ngFor='let item of array; let i = index' [ngClass]='{balls: i >= 4 ? true : false}'>{{item}}</p>
 <ng-template #noServer><p>No server!</p></ng-template>
 <app-server *ngFor="let server of servers"></app-server>
 
