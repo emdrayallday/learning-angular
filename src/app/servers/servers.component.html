@@ -1,7 +1,20 @@
-<p>
-  servers works!
-  Including 2 of server.ts
+<label for="">Server Name</label>
+<input
+type='text'
+class='form-control'
+(input)='onUpdateServerName($event)'
+>
+<input
+type='text'
+class='form-control'
+[(ngModel)]='serverNameTwoWay'
+>
+<p>{{serverNameTwoWay}}</p>
 
+<p>
+  {{serverName}}
+  <button class='btn btn-primary' [disabled]='!allowAddServer' (click)="onCreateServer()">Add Server</button>
+  {{serverCreationStatus}}
 </p>
 <app-server></app-server>
 <app-server></app-server>
