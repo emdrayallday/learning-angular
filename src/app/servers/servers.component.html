@@ -9,12 +9,11 @@ type='text'
 class='form-control'
 [(ngModel)]='serverNameTwoWay'
 >
-
-
-
   <button class='btn btn-primary' [disabled]='!allowAddServer' (click)="onCreateServer()">Add Server</button>
-
   <p *ngIf="serverName; else noServer">{{serverNameTwoWay}}</p>
+  <button (click)="toggleP()">Toggle Paragraph</button>
+  <p *ngIf='seeMe'>You can see me!</p>
+  <p *ngFor='let item of array' [ngClass]='{balls: item >= 5 ? true : false}'>{{item}}</p>
 <ng-template #noServer><p>No server!</p></ng-template>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
